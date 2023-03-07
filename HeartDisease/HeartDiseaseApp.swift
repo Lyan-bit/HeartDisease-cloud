@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct HeartDiseaseApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView(model: HeartDiseaseViewModel.getInstance(), classification: ClassificationViewModel.getInstance())
         }
     }
 }
